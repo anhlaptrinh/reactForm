@@ -68,6 +68,14 @@ import Search from "./Search";
         isValid = false;
       }
     });
+    const { hoTen, phone, email } = this.state.values;
+    if (!hoTen.trim() || !phone.trim() || !email.trim()) {
+     
+      isValid = false;
+      alert("Vui lòng không để trống thông tin trước khi thêm sinh viên!");
+      return;
+    }
+  
 
     if (isValid) {
       this.props.submitStudent(this.state.values)
